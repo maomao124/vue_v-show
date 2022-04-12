@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：vue_v-show
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/12
+  Time(创建时间)： 22:16
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="rev">反转</button>
+    <button @click="ageAdd">年龄加1</button>
+    <br>
+    <p v-show="false">test1</p>
+    <p v-show="true">test2</p>
+    <p v-show="isShow">test3</p>
+    <p v-show="isShow1">test4</p>
+    <p v-show="age>=18">test5</p>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            isShow: true,
+            isShow1: false,
+            age: 16
+        },
+        methods: {
+            ageAdd: function ()
+            {
+                this.age++;
+                console.log(this.age)
+            }
+            ,
+            rev: function ()
+            {
+                if (this.isShow === false)
+                {
+                    this.isShow = true
+                }
+                else
+                {
+                    this.isShow = false;
+                }
+                console.log(this.isShow)
+            }
+        }
+    })
+</script>
+</body>
+</html>
